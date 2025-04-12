@@ -1,0 +1,16 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+from scipy import stats
+
+df = pd.read_csv(r"C:\Users\kashi\Downloads\COVID-19.csv")
+
+print("\n📌 Objective 4: Hospitalization vs Death (Scatter Plot)")
+plt.figure(figsize=(10, 6))
+plt.scatter(df["Hospitalizations Rate - Total"], df["Deaths Rate - Total"], color='teal', alpha=0.6)
+plt.title("Hospitalizations vs. Death Rates")
+plt.xlabel("Hospitalizations Rate - Total")
+plt.ylabel("Deaths Rate - Total")
+plt.tight_layout()
+plt.show()
