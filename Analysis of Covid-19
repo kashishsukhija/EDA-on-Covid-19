@@ -12,7 +12,7 @@ print("🗂 Dataset Source: Official Government COVID Dataset")
 print("="*70)
 
 # ============================ Load and Prepare Dataset ================================================================================================================
-df = pd.read_csv(r"C:\Users\paras\Downloads\COVID-19.csv")
+df = pd.read_csv(r"C:\Users\kashi\Downloads\COVID-19.csv")
 df['Date'] = pd.to_datetime(df['Date'])
 df = df.sort_values('Date')  # Sorting based on Date
 
