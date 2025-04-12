@@ -1,0 +1,23 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+from scipy import stats
+
+df = pd.read_csv(r"C:\Users\kashi\Downloads\COVID-19.csv")
+
+print("\n📌 Objective 3: Race-wise Distribution (Donut Chart)")
+race_cols = [
+    'Cases Rate - Latinx', 'Cases Rate - Asian Non-Latinx',
+    'Cases Rate - Black Non-Latinx', 'Cases Rate - White Non-Latinx',
+    'Cases Rate - Other Race Non-Latinx'
+]
+race_means = [df[col].mean() for col in race_cols]
+
+plt.figure(figsize=(8, 8))
+wedges, texts, autotexts = plt.pie(race_means, labels=race_cols, autopct='%1.1f%%', startangle=140)
+centre_circle = plt.Circle((0, 0), 0.70, fc='white')  # donut effect
+plt.gca().add_artist(centre_circle)
+plt.title('COVID-19 Case Rate Distribution by Race')
+plt.tight_layout()
+plt.show()
