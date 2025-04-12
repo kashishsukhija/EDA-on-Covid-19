@@ -1,0 +1,21 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+from scipy import stats
+
+df = pd.read_csv(r"C:\Users\kashi\Downloads\COVID-19.csv")
+
+print("\n📌 Objective 2: Age-wise Comparison (Pie Chart)")
+avg_18_29 = df["Cases Rate - Age 18-29"].mean()
+avg_60_plus = df["Cases Rate - Age 60-69"].mean()
+
+labels = ['Age 18-29 (Younger Adults)', 'Age 60+ (Older Adults)']
+sizes = [avg_18_29, avg_60_plus]
+colors = ['#ff9999', '#66b3ff']
+
+plt.figure(figsize=(6, 6))
+plt.pie(sizes, labels=labels, colors=colors, startangle=140, autopct='%1.1f%%', wedgeprops={'edgecolor': 'black'})
+plt.title('Proportion of Average Case Rates: Age 18-29 vs Age 60+')
+plt.tight_layout()
+plt.show()
