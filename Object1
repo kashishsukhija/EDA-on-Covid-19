@@ -1,0 +1,22 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+from scipy import stats
+
+df = pd.read_csv(r"C:\Users\kashi\Downloads\COVID-19.csv")
+
+print("\n📌 Objective 1: Monthly Average Cases Rate (Bar Chart)")
+df['Month'] = df['Date'].dt.strftime('%b')
+monthly_cases = df.groupby('Month')[["Cases Rate - Total"]].mean().reindex([
+    'Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'
+]).reset_index()
+
+plt.figure(figsize=(10, 6))
+sns.barplot(x='Month', y='Cases Rate - Total', data=monthly_cases, hue='Month')
+plt.title('Monthly Average COVID-19 Case Rate')
+plt.xlabel('Month')
+plt.ylabel('Average Case Rate')
+plt.tight_layout()
+plt.show()
