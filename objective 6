@@ -1,0 +1,14 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+from scipy import stats
+
+df = pd.read_csv(r"C:\Users\kashi\Downloads\COVID-19.csv")
+print("\n📌 Objective 6: Correlation Analysis (Heatmap)")
+correlation_matrix = df[['Cases Rate - Total', 'Deaths Rate - Total', 'Hospitalizations Rate - Total']].corr()
+plt.figure(figsize=(8, 6))
+sns.heatmap(correlation_matrix, annot=True, cmap='coolwarm', fmt='.2f', linewidths=0.5)
+plt.title("Correlation Matrix Between Case, Death, and Hospitalization Rates")
+plt.tight_layout()
+plt.show()
