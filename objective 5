@@ -1,0 +1,16 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+from scipy import stats
+
+df = pd.read_csv(r"C:\Users\kashi\Downloads\COVID-19.csv")
+
+print("\n📌 Objective 5: Distribution of Case Rates (Histogram)")
+plt.figure(figsize=(10, 6))
+sns.histplot(data=df, x="Cases Rate - Total", hue="Month", bins=20, edgecolor="black")
+plt.title("Distribution of COVID-19 Case Rates by Month")
+plt.xlabel("Case Rate")
+plt.ylabel("Frequency")
+plt.tight_layout()
+plt.show()
