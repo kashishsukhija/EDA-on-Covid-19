@@ -1,0 +1,11 @@
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+import numpy as np
+from scipy import stats
+df = pd.read_csv(r"C:\Users\kashi\Downloads\COVID-19.csv")
+print("\n📋 Conclusion:")
+print("✔ This project presented a clear visual and statistical overview of COVID-19 case dynamics.")
+print("✔ It highlighted trends by month, age, and race, and explored relationships between hospitalizations and deaths.")
+print("✔ Correlation analysis and distribution insights added depth to understanding pandemic impact.")
+print("\n✅ All analysis steps are successfully completed.")
